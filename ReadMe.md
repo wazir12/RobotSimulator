@@ -12,6 +12,7 @@ A simple simulation program to move a robot on a table grid. The robot can be in
 
 You can run the RobotSimulator either directly from the `JAR file` or via `Docker`
 ## Run From Jar File
+- Locate Jar File in artifact of github  action section: [Link to jar file](https://github.com/wazir12/RobotSimulator/actions)
 - **Build the Project using Maven:** `mvn clean package`
 - **Locate the JAR File:** `target/RobotSimulator-1.0-SNAPSHOT.jar`
 - **Run the JAR:** `java -jar target/RobotSimulator-1.0-SNAPSHOT.jar`
