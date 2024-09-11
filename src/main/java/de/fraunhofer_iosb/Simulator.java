@@ -1,7 +1,52 @@
 package de.fraunhofer_iosb;
 
+import java.util.Scanner;
+
 public class Simulator {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Scanner scanner = new Scanner(System.in);
+        boolean toContinue = true;
+        while(toContinue){
+            try {
+                System.out.println("Enter table dimensions (rows columns):");
+                int rows = scanner.nextInt();
+                int cols = scanner.nextInt();
+                Table table = new Table(rows, cols);
+
+
+                System.out.println("Enter robot's initial position and orientation (row column orientation):");
+                int robotRow = scanner.nextInt();
+                int robotCol = scanner.nextInt();
+                String orientation = scanner.next();
+
+                Robot robot = new Robot(robotRow, robotCol, orientation);
+
+                System.out.println("Enter movement commands (e.g., MRMLRMM):");
+                String commands = scanner.next();
+
+                Command.execute(commands, robot, table);
+
+                System.out.println("Final position: " + robot);
+
+                System.out.println("Do you want to Continue (Y/N)?");
+                toContinue = scanner.next().equals("Y");
+            } catch(Exception e){
+                System.out.println("Exiting the program gracefully... due to "+e.getMessage());
+                e.printStackTrace();
+
+            }finally {
+                scanner.close();
+                System.out.println("Scanner closed. Program exited.");
+            }
+        }
+
+        //Shutdown Hook, for graceful shutdown
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Shutdown hook triggered. Exiting the program gracefully...");
+            scanner.close();
+            System.out.println("Scanner closed. Program exited.");
+        }));
+
     }
 }

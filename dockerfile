@@ -7,7 +7,7 @@ COPY pom.xml /app/
 RUN mvn dependency:go-offline
 
 COPY src /app/src
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 FROM openjdk:11-jre-slim
 
