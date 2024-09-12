@@ -29,7 +29,12 @@ You can run the RobotSimulator either directly from the `JAR file` or via `Docke
 ### Running the Docker Container
 - The `-it` flag enables interactive mode, allowing you to input values in the terminal.
 -  `docker run -it robotsimulator`
-## Example Input/Output
+
+## Accepted Commands
+1. **M** - Move Robot forward by one tile in the direction of the current orientation of the Robot.
+2. **L** - Rotate robot to Left
+3. **R** - Rotate robot to right
+## Example Input/Output format
 ```
   Enter table dimensions (rows columns):
   5 
