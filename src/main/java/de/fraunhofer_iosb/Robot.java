@@ -1,6 +1,9 @@
 package de.fraunhofer_iosb;
 
-public class Robot {
+import de.fraunhofer_iosb.contract.Movable;
+import de.fraunhofer_iosb.contract.Surface;
+
+public class Robot implements Movable {
     private int row;
     private int col;
     private String orientation;
@@ -11,12 +14,15 @@ public class Robot {
         this.orientation = orientation;
     }
 
-    public void move(Table table) {
+
+
+    @Override
+    public void move(Surface surface) {
         switch (orientation) {
-            case "N": if (table.isValidPosition(row - 1, col)) row--; break;
-            case "S": if (table.isValidPosition(row + 1, col)) row++; break;
-            case "E": if (table.isValidPosition(row, col + 1)) col++; break;
-            case "W": if (table.isValidPosition(row, col - 1)) col--; break;
+            case "N": if (surface.isValidPosition(row - 1, col)) row--; break;
+            case "S": if (surface.isValidPosition(row + 1, col)) row++; break;
+            case "E": if (surface.isValidPosition(row, col + 1)) col++; break;
+            case "W": if (surface.isValidPosition(row, col - 1)) col--; break;
         }
     }
 
