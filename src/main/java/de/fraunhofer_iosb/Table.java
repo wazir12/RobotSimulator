@@ -1,6 +1,8 @@
 package de.fraunhofer_iosb;
 
-public class Table {
+import de.fraunhofer_iosb.contract.Surface;
+
+public class Table implements Surface {
     private int rows;
     private int cols;
 

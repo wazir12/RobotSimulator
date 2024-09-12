@@ -1,5 +1,8 @@
 package de.fraunhofer_iosb;
 
+import de.fraunhofer_iosb.contract.Movable;
+import de.fraunhofer_iosb.contract.Surface;
+
 import java.util.Scanner;
 
 public class Simulator {
@@ -12,7 +15,7 @@ public class Simulator {
                 System.out.println("Enter table dimensions (rows columns):");
                 int rows = scanner.nextInt();
                 int cols = scanner.nextInt();
-                Table table = new Table(rows, cols);
+                Surface table = new Table(rows, cols);
 
 
                 System.out.println("Enter robot's initial position and orientation (row column orientation):");
@@ -20,7 +23,7 @@ public class Simulator {
                 int robotCol = scanner.nextInt();
                 String orientation = scanner.next();
 
-                Robot robot = new Robot(robotRow, robotCol, orientation);
+                Movable robot = new Robot(robotRow, robotCol, orientation);
 
                 System.out.println("Enter movement commands (e.g., MRMLRMM):");
                 String commands = scanner.next();
@@ -30,14 +33,11 @@ public class Simulator {
                 System.out.println("Final position: " + robot);
 
                 System.out.println("Do you want to Continue (Y/N)?");
-                toContinue = scanner.next().equals("Y");
+                toContinue = scanner.next().equalsIgnoreCase("Y");
             } catch(Exception e){
                 System.out.println("Exiting the program gracefully... due to "+e.getMessage());
                 e.printStackTrace();
 
-            }finally {
-                scanner.close();
-                System.out.println("Scanner closed. Program exited.");
             }
         }
 
