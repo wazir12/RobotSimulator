@@ -1,4 +1,4 @@
-package de.fraunhofer_iosb;
+package de.fraunhofer_iosb.surfaces;
 
 import de.fraunhofer_iosb.contract.Surface;
 

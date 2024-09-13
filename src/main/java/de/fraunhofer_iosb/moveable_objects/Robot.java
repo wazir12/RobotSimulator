@@ -1,4 +1,4 @@
-package de.fraunhofer_iosb;
+package de.fraunhofer_iosb.moveable_objects;
 
 import de.fraunhofer_iosb.contract.Movable;
 import de.fraunhofer_iosb.contract.Surface;

@@ -2,6 +2,8 @@ package de.fraunhofer_iosb;
 
 import de.fraunhofer_iosb.contract.Movable;
 import de.fraunhofer_iosb.contract.Surface;
+import de.fraunhofer_iosb.moveable_objects.Robot;
+import de.fraunhofer_iosb.surfaces.Table;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
