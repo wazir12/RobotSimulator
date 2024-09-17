@@ -1,5 +1,7 @@
 package de.fraunhofer_iosb;
 
+import de.fraunhofer_iosb.factory.OrientationFactory;
+import de.fraunhofer_iosb.command.CommandExecutor;
 import de.fraunhofer_iosb.contract.Movable;
 import de.fraunhofer_iosb.contract.Surface;
 import de.fraunhofer_iosb.moveable_objects.Robot;
@@ -25,12 +27,12 @@ public class Simulator {
                 int robotCol = scanner.nextInt();
                 String orientation = scanner.next();
 
-                Movable robot = new Robot(robotRow, robotCol, orientation);
+                Movable robot = new Robot(robotRow, robotCol, OrientationFactory.getOrientation(orientation));
 
                 System.out.println("Enter movement commands (e.g., MRMLRMM):");
                 String commands = scanner.next();
 
-                Command.execute(commands, robot, table);
+                CommandExecutor.execute(commands, robot, table);
 
                 System.out.println("Final position: " + robot);
 
@@ -51,4 +53,6 @@ public class Simulator {
         }));
 
     }
+
+
 }
