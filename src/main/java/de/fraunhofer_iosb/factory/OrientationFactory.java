@@ -1,7 +1,10 @@
 package de.fraunhofer_iosb.factory;
 
-import de.fraunhofer_iosb.Orientation.*;
 import de.fraunhofer_iosb.contract.Orientation;
+import de.fraunhofer_iosb.moveable_objects.orientation.EastOrientation;
+import de.fraunhofer_iosb.moveable_objects.orientation.NorthOrientation;
+import de.fraunhofer_iosb.moveable_objects.orientation.SouthOrientation;
+import de.fraunhofer_iosb.moveable_objects.orientation.WestOrientation;
 
 public class OrientationFactory {
 

@@ -1,6 +1,6 @@
 package de.fraunhofer_iosb;
 
-import de.fraunhofer_iosb.Orientation.NorthOrientation;
+import de.fraunhofer_iosb.moveable_objects.orientation.NorthOrientation;
 import de.fraunhofer_iosb.command.CommandExecutor;
 import de.fraunhofer_iosb.contract.Movable;
 import de.fraunhofer_iosb.contract.Surface;
